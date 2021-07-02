@@ -58,4 +58,43 @@ Conferir mensagem "${MSG_DESEJADA}"
     Page Should Contain      text=${MSG_DESEJADA}
 
 
+*** Keywords ***
+#caso teste3
 
+Abrir navegador
+    Open Browser        browser=${BROWSER}
+    Maximize Browser Window
+
+
+
+*** Keywords ***
+#caso teste4
+
+Abrir navegador
+    Open Browser        browser=${BROWSER}
+    Maximize Browser Window
+
+Clicar em "Sign in"
+    Click Element       name=Sign in
+
+Informar um e-mail válido
+    ${EMAIL}        maria123@gmail.com
+    Input Text      id=email_create     ${EMAIL}  
+
+Clicar em "Create an account"
+    Click Element       name=SubmitCreate
+
+Preencher os dados obrigatórios
+    Click Element       id=id_gender2
+    ##Adcionar um nome
+    ${NOME}     Maria Loudes
+    Input Text      name=customer_firstname     ${NOME}
+    ##Adcionar Sobrenome
+    ${SOBRENOME}        Silva
+    Input Text      name=customer_lastname     ${SOBRENOME}
+    ##ADcionar email
+    Input Text      name=email      ${EMAIL}
+    ##adcionar Senha
+    ${SENHA}        123456
+    Input Text      name=passwd         ${SENHA}
+    
