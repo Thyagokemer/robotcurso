@@ -1,124 +1,317 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.0.3 (Python 3.9.6 on win32)" generated="20210704 05:33:59.351" rpa="false" schemaversion="2">
-<suite id="s1" name="Mobile Automation" source="C:\Users\thyag\OneDrive\Área de Trabalho\robotcurso\tests\mobile_automation.robot">
-<test id="s1-t1" name="Caso de Teste 03: Usar método Swipe na tela">
-<kw name="Abrir o aplicativo" type="SETUP">
-<kw name="Open Application" library="AppiumLibrary">
-<arg>http://localhost:4723/wd/hub</arg>
-<arg>automationName=uiautomator2</arg>
-<arg>platformName=Android</arg>
-<arg>deviceName=0051221219</arg>
-<arg>autoGrantPermissions=true</arg>
-<arg>appPackage=com.google.android.youtube</arg>
-<arg>appActivity=com.google.android.youtube.HomeActivity</arg>
-<doc>Opens a new application to given Appium server.
-Capabilities of appium server, Android and iOS,
-Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
-| *Option*            | *Man.* | *Description*     |
-| remote_url          | Yes    | Appium server url |
-| alias               | no     | alias             |</doc>
-<status status="PASS" starttime="20210704 05:33:59.707" endtime="20210704 05:34:19.622"/>
+<robot generator="Robot 4.0.3 (Python 3.9.6 on win32)" generated="20210704 20:41:51.744" rpa="false" schemaversion="2">
+<suite id="s1" name="Web Automation" source="C:\Users\thyag\OneDrive\Área de Trabalho\robotcurso\tests\web_automation.robot">
+<test id="s1-t1" name="Caso de Teste 04: Adicionar Cliente">
+<kw name="Abrir navegador" library="Resource" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210704 20:41:52.101" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20210704 20:41:52.101" endtime="20210704 20:41:53.624"/>
 </kw>
-<status status="PASS" starttime="20210704 05:33:59.707" endtime="20210704 05:34:19.622"/>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210704 20:41:53.625" endtime="20210704 20:41:53.760"/>
 </kw>
-<kw name="Abrir o aplicativo">
-<kw name="Open Application" library="AppiumLibrary">
-<arg>http://localhost:4723/wd/hub</arg>
-<arg>automationName=uiautomator2</arg>
-<arg>platformName=Android</arg>
-<arg>deviceName=0051221219</arg>
-<arg>autoGrantPermissions=true</arg>
-<arg>appPackage=com.google.android.youtube</arg>
-<arg>appActivity=com.google.android.youtube.HomeActivity</arg>
-<doc>Opens a new application to given Appium server.
-Capabilities of appium server, Android and iOS,
-Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
-| *Option*            | *Man.* | *Description*     |
-| remote_url          | Yes    | Appium server url |
-| alias               | no     | alias             |</doc>
-<status status="PASS" starttime="20210704 05:34:19.623" endtime="20210704 05:34:39.652"/>
+<status status="PASS" starttime="20210704 20:41:52.100" endtime="20210704 20:41:53.760"/>
 </kw>
-<status status="PASS" starttime="20210704 05:34:19.623" endtime="20210704 05:34:39.652"/>
+<kw name="Acessar a página home do sites" library="Resource">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20210704 20:41:53.762" level="INFO">Opening url 'http://automationpractice.com'</msg>
+<status status="PASS" starttime="20210704 20:41:53.762" endtime="20210704 20:41:59.159"/>
 </kw>
-<kw name="Entrar no menu “Explorar”">
-<kw name="Click Element" library="AppiumLibrary">
-<arg>${TRENDING_BTN}</arg>
-<doc>Click element identified by `locator`.</doc>
-<msg timestamp="20210704 05:34:39.658" level="INFO">Clicking element 'xpath=//android.widget.Button[@content-desc="Explorar"]/android.widget.TextView'.</msg>
-<status status="PASS" starttime="20210704 05:34:39.655" endtime="20210704 05:34:42.360"/>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//*[@id='block_top_menu']/ul</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210704 20:41:59.159" endtime="20210704 20:41:59.198"/>
 </kw>
-<status status="PASS" starttime="20210704 05:34:39.655" endtime="20210704 05:34:42.361"/>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>My Store</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20210704 20:41:59.204" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20210704 20:41:59.198" endtime="20210704 20:41:59.204"/>
 </kw>
-<kw name="Usar swipe de tela até o 10 item da tela">
-<kw name="Swipe" library="AppiumLibrary">
-<arg>${start_x}=327</arg>
-<arg>Evaluate</arg>
-<arg>${element_location['x']} + (${element_size['327']} * 0.5)</arg>
-<doc>Swipe from one point to another point, for an optional duration.</doc>
-<msg timestamp="20210704 05:34:42.364" level="FAIL">Variable '${start_x}' not found.</msg>
-<status status="FAIL" starttime="20210704 05:34:42.362" endtime="20210704 05:34:42.364"/>
+<status status="PASS" starttime="20210704 20:41:53.761" endtime="20210704 20:41:59.205"/>
 </kw>
-<kw name="Swipe" library="AppiumLibrary">
-<arg>${start_y}=1258</arg>
-<arg>Evaluate</arg>
-<arg>${element_location['y']} + (${element_size['1258']} * 0.7)</arg>
-<doc>Swipe from one point to another point, for an optional duration.</doc>
-<status status="NOT RUN" starttime="20210704 05:34:42.365" endtime="20210704 05:34:42.365"/>
+<kw name="Clicar em &quot;Sign in&quot;" library="Resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[contains(text(),'Sign in')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210704 20:41:59.206" level="INFO">Clicking element '//*[contains(text(),'Sign in')]'.</msg>
+<status status="PASS" starttime="20210704 20:41:59.206" endtime="20210704 20:42:01.398"/>
 </kw>
-<kw name="Swipe" library="AppiumLibrary">
-<arg>${end_x}=372</arg>
-<arg>Evaluate</arg>
-<arg>${element_location['x']} + (${element_size['372']} * 0.5)</arg>
-<doc>Swipe from one point to another point, for an optional duration.</doc>
-<status status="NOT RUN" starttime="20210704 05:34:42.365" endtime="20210704 05:34:42.365"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210704 20:42:03.402" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210704 20:42:01.398" endtime="20210704 20:42:03.402"/>
 </kw>
-<kw name="Swipe" library="AppiumLibrary">
-<arg>${end_y}=258</arg>
-<arg>Evaluate</arg>
-<arg>${element_location['y']} + (${element_size['258']} * 0.3)</arg>
-<doc>Swipe from one point to another point, for an optional duration.</doc>
-<status status="NOT RUN" starttime="20210704 05:34:42.365" endtime="20210704 05:34:42.365"/>
+<status status="PASS" starttime="20210704 20:41:59.205" endtime="20210704 20:42:03.402"/>
 </kw>
-<kw name="Swipe" library="AppiumLibrary">
-<arg>${start_x}</arg>
-<arg>${start_y}</arg>
-<arg>${end_x}</arg>
-<arg>${end_y}</arg>
-<doc>Swipe from one point to another point, for an optional duration.</doc>
-<status status="NOT RUN" starttime="20210704 05:34:42.366" endtime="20210704 05:34:42.366"/>
+<kw name="Informar um e-mail válido" library="Resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=email_create</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210704 20:42:03.404" level="INFO">Clicking element 'id=email_create'.</msg>
+<status status="PASS" starttime="20210704 20:42:03.402" endtime="20210704 20:42:03.480"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210704 20:42:06.495" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20210704 20:42:03.480" endtime="20210704 20:42:06.495"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=email_create</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210704 20:42:06.495" level="INFO">Typing text 'maria12@gmail.com' into text field 'name=email_create'.</msg>
+<status status="PASS" starttime="20210704 20:42:06.495" endtime="20210704 20:42:06.593"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210704 20:42:09.600" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20210704 20:42:06.594" endtime="20210704 20:42:09.600"/>
+</kw>
+<status status="PASS" starttime="20210704 20:42:03.402" endtime="20210704 20:42:09.600"/>
+</kw>
+<kw name="Clicar em &quot;Create an account&quot;" library="Resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>name=SubmitCreate</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210704 20:42:09.602" level="INFO">Clicking element 'name=SubmitCreate'.</msg>
+<status status="PASS" starttime="20210704 20:42:09.602" endtime="20210704 20:42:09.670"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210704 20:42:12.675" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20210704 20:42:09.670" endtime="20210704 20:42:12.675"/>
+</kw>
+<status status="PASS" starttime="20210704 20:42:09.602" endtime="20210704 20:42:12.675"/>
+</kw>
+<kw name="Preencher os dados obrigatórios" library="Resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=customer_firstname</arg>
+<arg>${NOME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210704 20:42:12.677" level="INFO">Typing text 'Maria Loudes' into text field 'name=customer_firstname'.</msg>
+<status status="PASS" starttime="20210704 20:42:12.675" endtime="20210704 20:42:12.813"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>1</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20210704 05:34:42.366" endtime="20210704 05:34:42.366"/>
+<msg timestamp="20210704 20:42:13.834" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210704 20:42:12.813" endtime="20210704 20:42:13.834"/>
 </kw>
-<status status="FAIL" starttime="20210704 05:34:42.361" endtime="20210704 05:34:42.366"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=customer_lastname</arg>
+<arg>${SOBRENOME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210704 20:42:13.834" level="INFO">Typing text 'Silva' into text field 'name=customer_lastname'.</msg>
+<status status="PASS" starttime="20210704 20:42:13.834" endtime="20210704 20:42:13.951"/>
 </kw>
-<kw name="Clicar no vídeo">
-<status status="NOT RUN" starttime="20210704 05:34:42.367" endtime="20210704 05:34:42.367"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210704 20:42:14.956" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210704 20:42:13.951" endtime="20210704 20:42:14.956"/>
 </kw>
-<kw name="Fechar o aplicativo" type="TEARDOWN">
-<msg timestamp="20210704 05:34:42.373" level="FAIL">No keyword with name 'Fechar o aplicativo' found.</msg>
-<status status="FAIL" starttime="20210704 05:34:42.373" endtime="20210704 05:34:42.373">No keyword with name 'Fechar o aplicativo' found.</status>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=email</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210704 20:42:14.956" level="INFO">Typing text 'maria12@gmail.com' into text field 'name=email'.</msg>
+<status status="PASS" starttime="20210704 20:42:14.956" endtime="20210704 20:42:15.095"/>
 </kw>
-<tag>ROLAGEM</tag>
-<status status="FAIL" starttime="20210704 05:33:59.706" endtime="20210704 05:34:42.374">Variable '${start_x}' not found.
-
-Also teardown failed:
-No keyword with name 'Fechar o aplicativo' found.</status>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210704 20:42:16.106" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210704 20:42:15.095" endtime="20210704 20:42:16.106"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=passwd</arg>
+<arg>${SENHA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210704 20:42:16.106" level="INFO">Typing text '123456' into text field 'name=passwd'.</msg>
+<status status="PASS" starttime="20210704 20:42:16.106" endtime="20210704 20:42:16.210"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210704 20:42:17.223" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210704 20:42:16.210" endtime="20210704 20:42:17.223"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=firstname</arg>
+<arg>${NOME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210704 20:42:17.223" level="INFO">Typing text 'Maria Loudes' into text field 'name=firstname'.</msg>
+<status status="PASS" starttime="20210704 20:42:17.223" endtime="20210704 20:42:17.349"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210704 20:42:18.359" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210704 20:42:17.349" endtime="20210704 20:42:18.359"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=lastname</arg>
+<arg>${SOBRENOME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210704 20:42:18.359" level="INFO">Typing text 'Silva' into text field 'name=lastname'.</msg>
+<status status="PASS" starttime="20210704 20:42:18.359" endtime="20210704 20:42:18.487"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210704 20:42:19.497" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210704 20:42:18.487" endtime="20210704 20:42:19.497"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=address1</arg>
+<arg>${ENDERÇO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210704 20:42:19.497" level="INFO">Typing text 'Rua alberto antunes,123' into text field 'name=address1'.</msg>
+<status status="PASS" starttime="20210704 20:42:19.497" endtime="20210704 20:42:19.620"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210704 20:42:20.624" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210704 20:42:19.620" endtime="20210704 20:42:20.624"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=city</arg>
+<arg>${CIDADE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210704 20:42:20.624" level="INFO">Typing text 'New York' into text field 'name=city'.</msg>
+<status status="PASS" starttime="20210704 20:42:20.624" endtime="20210704 20:42:20.733"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210704 20:42:21.740" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210704 20:42:20.734" endtime="20210704 20:42:21.740"/>
+</kw>
+<kw name="Select From List By Index" library="SeleniumLibrary">
+<arg>id_state</arg>
+<arg>33</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<msg timestamp="20210704 20:42:21.740" level="INFO">Selecting options from selection list 'id_state' by index 33.</msg>
+<status status="PASS" starttime="20210704 20:42:21.740" endtime="20210704 20:42:21.968"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210704 20:42:22.981" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210704 20:42:21.968" endtime="20210704 20:42:22.981"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=postcode</arg>
+<arg>${ZIP}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210704 20:42:22.981" level="INFO">Typing text '11204' into text field 'name=postcode'.</msg>
+<status status="PASS" starttime="20210704 20:42:22.981" endtime="20210704 20:42:23.093"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210704 20:42:25.094" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210704 20:42:23.094" endtime="20210704 20:42:25.094"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=phone_mobile</arg>
+<arg>${CELULAR}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210704 20:42:25.094" level="INFO">Typing text '555222333554' into text field 'name=phone_mobile'.</msg>
+<status status="PASS" starttime="20210704 20:42:25.094" endtime="20210704 20:42:25.221"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210704 20:42:26.224" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210704 20:42:25.222" endtime="20210704 20:42:26.224"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=alias</arg>
+<arg>${REF}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210704 20:42:26.224" level="INFO">Typing text 'Rua ao lado' into text field 'name=alias'.</msg>
+<status status="PASS" starttime="20210704 20:42:26.224" endtime="20210704 20:42:26.342"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210704 20:42:27.357" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210704 20:42:26.342" endtime="20210704 20:42:27.357"/>
+</kw>
+<status status="PASS" starttime="20210704 20:42:12.675" endtime="20210704 20:42:27.357"/>
+</kw>
+<kw name="Submeter cadastro" library="Resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>name=submitAccount</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210704 20:42:27.359" level="INFO">Clicking element 'name=submitAccount'.</msg>
+<status status="PASS" starttime="20210704 20:42:27.357" endtime="20210704 20:42:29.199"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210704 20:42:34.219" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210704 20:42:29.200" endtime="20210704 20:42:34.219"/>
+</kw>
+<status status="PASS" starttime="20210704 20:42:27.357" endtime="20210704 20:42:34.219"/>
+</kw>
+<kw name="Conferir se o cadastro foi efetuado com sucesso" library="Resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>class="info-account"</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210704 20:42:34.471" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-30.png"&gt;&lt;img src="selenium-screenshot-30.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210704 20:42:34.251" endtime="20210704 20:42:34.471"/>
+</kw>
+<msg timestamp="20210704 20:42:34.471" level="FAIL">InvalidSelectorException: Message: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=91.0.4472.124)
+</msg>
+<status status="FAIL" starttime="20210704 20:42:34.221" endtime="20210704 20:42:34.471"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Welcome to your account. Here you can manage all of your personal information and orders.</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="NOT RUN" starttime="20210704 20:42:34.471" endtime="20210704 20:42:34.471"/>
+</kw>
+<status status="FAIL" starttime="20210704 20:42:34.219" endtime="20210704 20:42:34.471"/>
+</kw>
+<kw name="Fechar navegador" library="Resource" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210704 20:42:34.471" endtime="20210704 20:42:36.719"/>
+</kw>
+<status status="PASS" starttime="20210704 20:42:34.471" endtime="20210704 20:42:36.719"/>
+</kw>
+<tag>ADDClient</tag>
+<status status="FAIL" starttime="20210704 20:41:52.099" endtime="20210704 20:42:36.720">InvalidSelectorException: Message: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=91.0.4472.124)
+</status>
 </test>
-<doc>Aqui estarão presentes todos os testes automatizados Mobile Android.</doc>
-<status status="FAIL" starttime="20210704 05:33:59.354" endtime="20210704 05:34:42.377"/>
+<doc>Aqui estão presentes todos os cenários de teste Web.</doc>
+<status status="FAIL" starttime="20210704 20:41:51.744" endtime="20210704 20:42:36.723"/>
 </suite>
 <statistics>
 <total>
 <stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1" skip="0">ROLAGEM</stat>
+<stat pass="0" fail="1" skip="0">ADDClient</stat>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Mobile Automation">Mobile Automation</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Web Automation">Web Automation</stat>
 </suite>
 </statistics>
 <errors>
